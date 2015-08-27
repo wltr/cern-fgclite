@@ -1,0 +1,70 @@
+#
+# I/O Banks
+#
+
+set_iobank bank0 -vcci 3.3V
+set_iobank bank1 -vcci 3.3V
+set_iobank bank2 -vcci 3.3V
+set_iobank bank3 -vcci 3.3V
+
+#
+# I/O Constraints
+#
+
+# Clock and Resets
+set_io {clk_i}           -fixed yes -pinname 136
+
+# NanoFIP core
+set_io {subs_i[0]}       -fixed yes -pinname 149
+set_io {subs_i[1]}       -fixed yes -pinname 150
+set_io {subs_i[2]}       -fixed yes -pinname 151
+set_io {subs_i[3]}       -fixed yes -pinname 152
+set_io {subs_i[4]}       -fixed yes -pinname 153
+
+#set_io {fd_rxcdn_i}      -fixed yes -pinname 121
+set_io {fd_rxd_i}        -fixed yes -pinname 127
+set_io {fd_txer_i}       -fixed yes -pinname 128
+set_io {fd_wdgn_i}       -fixed yes -pinname 120
+
+set_io {rstin_i}         -fixed yes -pinname 21
+set_io {rstpon_i}        -fixed yes -pinname 32
+
+set_io {jc_tdo_i}        -fixed yes -pinname 47 -res_pull up
+
+set_io {fd_rstn_o}       -fixed yes -pinname 118
+set_io {fd_txck_o}       -fixed yes -pinname 129
+set_io {fd_txd_o}        -fixed yes -pinname 131
+set_io {fd_txena_o}      -fixed yes -pinname 119
+
+set_io {rston_o}         -fixed yes -pinname 94
+
+set_io {r_fcser_o}       -fixed yes -pinname 85
+set_io {r_tler_o}        -fixed yes -pinname 80
+set_io {u_cacer_o}       -fixed yes -pinname 78
+set_io {u_pacer_o}       -fixed yes -pinname 79
+
+set_io {jc_tms_o}        -fixed yes -pinname 44
+set_io {jc_tdi_o}        -fixed yes -pinname 43
+set_io {jc_tck_o}        -fixed yes -pinname 42
+
+# NanoFIP extensions
+set_io {jc_trst_o}      -fixed yes -pinname 39
+set_io {cfxf_rst_n_o}   -fixed yes -pinname 13
+set_io {cmd_0_o}        -fixed yes -pinname 87
+set_io {tx_rdy_o}       -fixed yes -pinname 90
+set_io {pf_inh_n_o}     -fixed yes -pinname 12
+
+# 3-wire serial receiver from CF
+set_io {cf_rx_frame_i}  -fixed yes -pinname 202
+set_io {cf_rx_bit_en_i} -fixed yes -pinname 203
+set_io {cf_rx_i}        -fixed yes -pinname 201
+
+# 3-wire serial transmitter to CF
+set_io {cf_tx_frame_o}  -fixed yes -pinname 205
+set_io {cf_tx_bit_en_o} -fixed yes -pinname 206
+set_io {cf_tx_o}        -fixed yes -pinname 204
+
+# Debugging
+#set_io {debug_rx_i}     -fixed yes -pinname 198
+set_io {debug_tx_o}     -fixed yes -pinname 197
+set_io {debug_probe_o}  -fixed yes -pinname 196

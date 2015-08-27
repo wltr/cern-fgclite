@@ -1,0 +1,216 @@
+#
+# I/O Banks
+#
+
+set_iobank bank0 -vcci 3.3V
+set_iobank bank1 -vcci 3.3V
+set_iobank bank2 -vcci 3.3V
+set_iobank bank3 -vcci 3.3V
+set_iobank bank4 -vcci 3.3V
+set_iobank bank5 -vcci 3.3V
+set_iobank bank6 -vcci 3.3V
+set_iobank bank7 -vcci 3.3V
+
+#
+# I/O Constraints
+#
+
+# Clock and Resets
+set_io {clk_i}               -fixed yes -pinname 26
+
+set_io {po_rst_i}            -fixed yes -pinname 24
+set_io {pb_rst_n_i}          -fixed yes -pinname 28
+set_io {nf_rst_n_i}          -fixed yes -pinname 33
+
+# LEDs
+set_io {leds_red_n_o[0]}     -fixed yes -pinname 194
+set_io {leds_red_n_o[1]}     -fixed yes -pinname 197
+set_io {leds_red_n_o[2]}     -fixed yes -pinname 199
+set_io {leds_red_n_o[3]}     -fixed yes -pinname 202
+set_io {leds_red_n_o[4]}     -fixed yes -pinname 204
+set_io {leds_red_n_o[5]}     -fixed yes -pinname 206
+
+set_io {leds_green_n_o[0]}   -fixed yes -pinname 193
+set_io {leds_green_n_o[1]}   -fixed yes -pinname 196
+set_io {leds_green_n_o[2]}   -fixed yes -pinname 198
+set_io {leds_green_n_o[3]}   -fixed yes -pinname 201
+set_io {leds_green_n_o[4]}   -fixed yes -pinname 203
+set_io {leds_green_n_o[5]}   -fixed yes -pinname 205
+
+set_io {leds_test_n_i}       -fixed yes -pinname 192
+
+# Power converter interface
+set_io {conv_cmd_o[0]}       -fixed yes -pinname 91
+set_io {conv_cmd_o[1]}       -fixed yes -pinname 90
+set_io {conv_cmd_o[2]}       -fixed yes -pinname 87
+set_io {conv_cmd_o[3]}       -fixed yes -pinname 86
+set_io {conv_cmd_o[4]}       -fixed yes -pinname 85
+set_io {conv_cmd_o[5]}       -fixed yes -pinname 84
+set_io {conv_cmd_o[6]}       -fixed yes -pinname 83
+set_io {conv_cmd_o[7]}       -fixed yes -pinname 82
+
+set_io {conv_stat_i[0]}      -fixed yes -pinname 4
+set_io {conv_stat_i[1]}      -fixed yes -pinname 5
+set_io {conv_stat_i[2]}      -fixed yes -pinname 6
+set_io {conv_stat_i[3]}      -fixed yes -pinname 7
+set_io {conv_stat_i[4]}      -fixed yes -pinname 8
+set_io {conv_stat_i[5]}      -fixed yes -pinname 9
+set_io {conv_stat_i[6]}      -fixed yes -pinname 10
+set_io {conv_stat_i[7]}      -fixed yes -pinname 11
+set_io {conv_stat_i[8]}      -fixed yes -pinname 12
+set_io {conv_stat_i[9]}      -fixed yes -pinname 13
+set_io {conv_stat_i[10]}     -fixed yes -pinname 14
+set_io {conv_stat_i[11]}     -fixed yes -pinname 15
+set_io {conv_stat_i[12]}     -fixed yes -pinname 19
+set_io {conv_stat_i[13]}     -fixed yes -pinname 20
+set_io {conv_stat_i[14]}     -fixed yes -pinname 21
+set_io {conv_stat_i[15]}     -fixed yes -pinname 22
+
+# SRAM interface
+set_io {sram_addr_o[0]}      -fixed yes -pinname 167
+set_io {sram_addr_o[1]}      -fixed yes -pinname 168
+set_io {sram_addr_o[2]}      -fixed yes -pinname 169
+set_io {sram_addr_o[3]}      -fixed yes -pinname 172
+set_io {sram_addr_o[4]}      -fixed yes -pinname 173
+set_io {sram_addr_o[5]}      -fixed yes -pinname 174
+set_io {sram_addr_o[6]}      -fixed yes -pinname 175
+set_io {sram_addr_o[7]}      -fixed yes -pinname 176
+set_io {sram_addr_o[8]}      -fixed yes -pinname 177
+set_io {sram_addr_o[9]}      -fixed yes -pinname 179
+set_io {sram_addr_o[10]}     -fixed yes -pinname 180
+set_io {sram_addr_o[11]}     -fixed yes -pinname 181
+set_io {sram_addr_o[12]}     -fixed yes -pinname 182
+set_io {sram_addr_o[13]}     -fixed yes -pinname 183
+set_io {sram_addr_o[14]}     -fixed yes -pinname 184
+set_io {sram_addr_o[15]}     -fixed yes -pinname 185
+set_io {sram_addr_o[16]}     -fixed yes -pinname 188
+set_io {sram_addr_o[17]}     -fixed yes -pinname 189
+set_io {sram_addr_o[18]}     -fixed yes -pinname 190
+set_io {sram_addr_o[19]}     -fixed yes -pinname 191
+
+set_io {sram_ctrl_o[0]}      -fixed yes -pinname 159
+set_io {sram_ctrl_o[1]}      -fixed yes -pinname 160
+set_io {sram_ctrl_o[2]}      -fixed yes -pinname 161
+set_io {sram_ctrl_o[3]}      -fixed yes -pinname 163
+set_io {sram_ctrl_o[4]}      -fixed yes -pinname 164
+set_io {sram_ctrl_o[5]}      -fixed yes -pinname 165
+set_io {sram_ctrl_o[6]}      -fixed yes -pinname 166
+
+set_io {sram_data_io[0]}     -fixed yes -pinname 134
+set_io {sram_data_io[1]}     -fixed yes -pinname 135
+set_io {sram_data_io[2]}     -fixed yes -pinname 136
+set_io {sram_data_io[3]}     -fixed yes -pinname 137
+set_io {sram_data_io[4]}     -fixed yes -pinname 138
+set_io {sram_data_io[5]}     -fixed yes -pinname 139
+set_io {sram_data_io[6]}     -fixed yes -pinname 143
+set_io {sram_data_io[7]}     -fixed yes -pinname 144
+set_io {sram_data_io[8]}     -fixed yes -pinname 145
+set_io {sram_data_io[9]}     -fixed yes -pinname 146
+set_io {sram_data_io[10]}    -fixed yes -pinname 147
+set_io {sram_data_io[11]}    -fixed yes -pinname 148
+set_io {sram_data_io[12]}    -fixed yes -pinname 149
+set_io {sram_data_io[13]}    -fixed yes -pinname 150
+set_io {sram_data_io[14]}    -fixed yes -pinname 151
+set_io {sram_data_io[15]}    -fixed yes -pinname 152
+
+# Optical interface
+#set_io {optical_i[0]}        -fixed yes -pinname 129
+#set_io {optical_i[1]}        -fixed yes -pinname 132
+
+# Analogue board interface
+set_io {ab_temp_stop_o}      -fixed yes -pinname 118
+set_io {ab_pwr_on_n_o}       -fixed yes -pinname 23
+
+# Analogue board calibration multiplexer (only one can be active)
+set_io {ab_cal_dac_o}        -fixed yes -pinname 113
+set_io {ab_cal_offset_o}     -fixed yes -pinname 115
+set_io {ab_cal_vref_p_o}     -fixed yes -pinname 112
+set_io {ab_cal_vref_n_o}     -fixed yes -pinname 114
+
+# Analogue board DAC interface
+set_io {ab_dac_din_o}        -fixed yes -pinname 127
+set_io {ab_dac_sclk_o}       -fixed yes -pinname 128
+set_io {ab_dac_cs_o}         -fixed yes -pinname 125
+
+# Analogue board ADC V_MEAS
+set_io {ab_adc_vs_i[0]}      -fixed yes -pinname 58
+set_io {ab_adc_vs_i[1]}      -fixed yes -pinname 55
+
+#set_io {ab_adc_vs_clk_i}     -fixed yes -pinname 56
+set_io {ab_adc_vs_rst_n_o}   -fixed yes -pinname 124
+set_io {ab_sw_in_vs_o}       -fixed yes -pinname 117
+
+# Analogue board ADC I_A
+set_io {ab_adc_a_i[0]}       -fixed yes -pinname 78
+set_io {ab_adc_a_i[1]}       -fixed yes -pinname 75
+
+#set_io {ab_adc_a_clk_i}      -fixed yes -pinname 76
+set_io {ab_adc_a_rst_n_o}    -fixed yes -pinname 120
+set_io {ab_sw_in_a_o}        -fixed yes -pinname 116
+
+# Analogue board ADC I_B
+set_io {ab_adc_b_i[0]}       -fixed yes -pinname 99
+set_io {ab_adc_b_i[1]}       -fixed yes -pinname 98
+
+#set_io {ab_adc_b_clk_i}      -fixed yes -pinname 96
+set_io {ab_adc_b_rst_n_o}    -fixed yes -pinname 121
+set_io {ab_sw_in_b_o}        -fixed yes -pinname 119
+
+# Interlocks
+set_io {interlock_i[0]}      -fixed yes -pinname 94
+set_io {interlock_i[1]}      -fixed yes -pinname 95
+
+set_io {interlock_o[0]}      -fixed yes -pinname 30
+set_io {interlock_o[1]}      -fixed yes -pinname 31
+
+# PF interface
+set_io {pf_req_n_o}          -fixed yes -pinname 34
+set_io {pf_pwr_dwn_en_o}     -fixed yes -pinname 79
+set_io {pf_pwr_flr_i}        -fixed yes -pinname 80
+set_io {pf_pwr_dwn_i}        -fixed yes -pinname 77
+
+# NF interface
+set_io {nf_cmd_0_i}          -fixed yes -pinname 43
+#set_io {nf_tx_rdy_i}         -fixed yes -pinname 42
+#set_io {nf_r_fcser_i}        -fixed yes -pinname 37
+#set_io {nf_r_tler_i}         -fixed yes -pinname 35
+#set_io {nf_u_cacer_i}        -fixed yes -pinname 39
+#set_io {nf_u_pacer_i}        -fixed yes -pinname 38
+
+# 3-wire serial receiver from NF
+set_io {nf_rx_frame_i}       -fixed yes -pinname 47
+set_io {nf_rx_bit_en_i}      -fixed yes -pinname 49
+set_io {nf_rx_i}             -fixed yes -pinname 48
+
+# 3-wire serial transmitter to NF
+set_io {nf_tx_frame_o}       -fixed yes -pinname 45
+set_io {nf_tx_bit_en_o}      -fixed yes -pinname 46
+set_io {nf_tx_o}             -fixed yes -pinname 44
+
+# 2 x 3-wire serial receiver from XF
+set_io {xf_rx_frame_i[0]}    -fixed yes -pinname 66
+set_io {xf_rx_frame_i[1]}    -fixed yes -pinname 61
+
+set_io {xf_rx_bit_en_i[0]}   -fixed yes -pinname 67
+set_io {xf_rx_bit_en_i[1]}   -fixed yes -pinname 63
+
+set_io {xf_rx_i[0]}          -fixed yes -pinname 68
+set_io {xf_rx_i[1]}          -fixed yes -pinname 64
+
+# Control signals to XF
+set_io {xf_dim_trig_o}       -fixed yes -pinname 57
+set_io {xf_dim_rst_o}        -fixed yes -pinname 60
+set_io {xf_ow_trig_o}        -fixed yes -pinname 59
+
+set_io {xf_ow_bus_sel_o[0]}  -fixed yes -pinname 69
+set_io {xf_ow_bus_sel_o[1]}  -fixed yes -pinname 70
+set_io {xf_ow_bus_sel_o[2]}  -fixed yes -pinname 74
+
+# Auxiliary interface (for future use)
+set_io {aux_i}               -fixed yes -pinname 153
+set_io {aux_o}               -fixed yes -pinname 32
+
+# Debugging
+#set_io {debug_rx_i}          -fixed yes -pinname 92
+set_io {debug_tx_o}          -fixed yes -pinname 93
+set_io {debug_probe_o}       -fixed yes -pinname 73
