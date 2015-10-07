@@ -132,7 +132,7 @@ architecture rtl of xf is
   signal xf_rx_data_en_0 : std_ulogic;
   signal xf_rx_error_0   : std_ulogic;
 
-  signal xf_rx_data_1    : std_ulogic_vector(79 downto 0);
+  signal xf_rx_data_1    : std_ulogic_vector(83 downto 0);
   signal xf_rx_data_en_1 : std_ulogic;
   signal xf_rx_error_1   : std_ulogic;
 
@@ -175,7 +175,7 @@ begin -- architecture rtl
   ---------------------------------------------------------------------------
 
   dim_addr <= xf_rx_data_0(41 downto 38) & xf_rx_data_0(36 downto 34);
-  ow_addr  <= "000000"; -- TODO: Add OW number
+  ow_addr  <= "00" & xf_rx_data_1(83 downto 80);
 
   ---------------------------------------------------------------------------
   -- Instances
@@ -201,7 +201,7 @@ begin -- architecture rtl
   --! 2nd 3-wire serial receiver from XF
   xf_rx_inst_1 : entity work.serial_3wire_rx
     generic map (
-      data_width_g => 80)
+      data_width_g => 84)
     port map (
       clk_i       => clk_i,
       rst_asy_n_i => rst_asy_n_i,
@@ -249,7 +249,7 @@ begin -- architecture rtl
 
       wr_addr_i    => ow_addr,
       wr_en_i      => xf_rx_data_en_1,
-      wr_data_i    => xf_rx_data_1,
+      wr_data_i    => xf_rx_data_1(79 downto 0),
       wr_done_o    => open,
       wr_busy_o    => open,
 
