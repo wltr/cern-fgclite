@@ -119,9 +119,6 @@ architecture rtl of nf is
   signal mem_data    : std_ulogic_vector(7 downto 0);
   signal mem_data_en : std_ulogic;
 
-  -- TODO: Debug only
-  signal command : nf_command_t;
-
   --! @}
 
 begin -- architecture rtl
@@ -138,9 +135,6 @@ begin -- architecture rtl
 
   nf_version_o    <= rx_data(43 downto 40);
   nf_version_en_o <= rx_data_en;
-
-  -- TODO: Debug only
-  command_o <= command;
 
   ---------------------------------------------------------------------------
   -- Signal Assignments
@@ -206,8 +200,7 @@ begin -- architecture rtl
       addr_i      => rx_data(33 downto 32),
       data_i      => rx_data(31 downto 0),
 
-      -- TODO: Debug only
-      command_o   => command);
+      command_o   => command_o);
 
   --! NF transmitter registers
   nf_tx_registers_inst : entity work.nf_tx_registers
@@ -221,9 +214,6 @@ begin -- architecture rtl
       data_o      => tx_reg_data,
       data_en_o   => tx_reg_data_en,
 
-      -- TODO: Debug only
-      inc_i => tx_start_i,
-      ms_i  => command.ms_period,
       status_i    => status_i);
 
   --! NF transmitter page

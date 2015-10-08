@@ -47,10 +47,6 @@ entity nf_tx_registers is
     --! @name Registers
     --! @{
 
-    -- TODO: Debug only
-    inc_i : in std_ulogic;
-    ms_i  : in std_ulogic_vector(15 downto 0);
-
     --! FGClite status
     status_i : in nf_status_t);
 
@@ -77,9 +73,6 @@ architecture rtl of nf_tx_registers is
 
   signal data    : std_ulogic_vector(data_o'range);
   signal data_en : std_ulogic;
-
-  -- TODO: Debug only
-  signal tmp : unsigned(15 downto 0);
 
   --! @}
 
@@ -113,11 +106,6 @@ begin -- architecture rtl
       else
         --Defaults
         data_en <= '0';
-
-        -- TODO: Debug only
-        if inc_i = '1' then
-          tmp <= tmp + 1;
-        end if;
 
         if rd_en_i = '1' then
           data    <= reg(to_integer(unsigned(addr_i)));
@@ -246,16 +234,6 @@ begin -- architecture rtl
         if status_i.serial_data_en = '1' then
           reg(53 + to_integer(unsigned(status_i.serial_num))) <= status_i.serial_data;
         end if;
-
-        -- TODO: Debug only
-        if inc_i = '1' then
-          reg(54) <= ms_i(7 downto 0);
-          reg(55) <= ms_i(15 downto 8);
-        end if;
-        reg(56) <= std_ulogic_vector(tmp(7 downto 0));
-        reg(57) <= std_ulogic_vector(tmp(15 downto 8));
-        reg(58) <= x"AA";
-        reg(59) <= x"FF";
       end if;
     end if;
   end process regs;
